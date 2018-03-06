@@ -1,0 +1,141 @@
+/*动画样式*/
+*{
+    transition: all 1s;
+}
+/*初始化动画样式*/
+/*屏幕一初始化样式*/
+.screen-1__heading_animate_init,
+.screen-1__shadow_animate_init{
+    transform: translate(0,100%);
+    opacity: 0;
+}
+.screen-1__phone_animate_init{
+    transform: translate(0,-100%);
+    opacity: 0;
+}
+/*屏幕二初始化样式*/
+.screen-2__heading_animate_init{
+    transform: translate(0,-100%);
+    opacity: 0;
+}
+.screen-2__subheading_animate_init,
+.screen-2__phone_animate_init{
+    transform: translate(0,100%);
+    opacity: 0;
+}
+.screen-2__phone__point_i_1_animate_init{
+    transform: translate(-100%,0);
+    opacity: 0;
+}
+.screen-2__phone__point_i_2_animate_init,
+.screen-2__phone__point_i_3_animate_init{
+    transform: translate(100%,0);
+    opacity: 0;
+}
+.screen-2__phone__point{
+    transition: all 1s 1s;
+}
+/*屏幕三初始化样式*/
+.screen-3__heading_animate_init{
+    transform: translate(0,-100%);
+    opacity: 0;
+}
+.screen-3__subheading_animate_init,
+.screen-3__phone_animate_init{
+    transform: translate(0,100%);
+    opacity: 0;
+}
+.screen-3__item_animate_init{
+    transform:scale(0.5);
+    opacity: 0;
+}
+/*闪烁动画*/
+@keyframes flicker {
+    0%,100%{
+       transform:  scale(1);
+    }
+    50%{
+       transform:  scale(0);
+    }
+}
+.screen-2__phone__point:after,
+.screen-2__phone__point:before{
+    content: "";
+    display: block;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    background-color: rgba(255,0,0,0.4);
+    animation: flicker 2s infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.screen-2__phone__point:before{
+    animation: flicker 2s 1s infinite;
+}
+.screen-2__phone__point_i_1:after,
+.screen-2__phone__point_i_1:before{
+    left: 199px;
+    top:0;
+}
+/*屏幕四初始化样式*/
+.screen-4__heading_animate_init{
+    transform: translate(0,-100%);
+    opacity: 0;
+}
+.screen-4__subheading_animate_init{
+    transform: translate(0,100%);
+    opacity: 0;
+}
+.screen-4__type__phone_i_1_animate_init{
+    transition:all 1s 0.5s;
+}
+.screen-4__type__phone_i_2_animate_init{
+    transition:all 1s 1s;
+}
+.screen-4__type__phone_i_3_animate_init{
+    transition:all 1s 1.5s;
+}
+.screen-4__type__phone_i_4_animate_init{
+    transition:all 1s 2s;
+}
+.screen-4__type__phone_i_1_animate_init,
+.screen-4__type__phone_i_2_animate_init,
+.screen-4__type__phone_i_3_animate_init,
+.screen-4__type__phone_i_4_animate_init{
+    opacity: 0;
+}
+/*屏幕五初始化样式*/
+.screen-5__heading_animate_init{
+    transform: translate(0,-100%);
+    opacity: 0;
+}
+.screen-5__subheading_animate_init,
+.screen-5__pic_animate_init{
+    transform: translate(0,100%);
+    opacity: 0;
+}
+/*导航条动画样式*/
+.header_status_black{
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    right:0;
+    left:0;
+    z-index: 2;
+}
+.header_status_black .header__nav__item,
+.header_status_black .header__logo-name{
+    color: #ffffff;
+}
+.header_status_black .header__nav__item_status_active{
+    color: red;
+}
+.header_status_black .header__nav__item:hover{
+    color: red;
+}
+/*大纲动画样式*/
+.outline_status_out{
+    transform: translate(100%,0);
+}
